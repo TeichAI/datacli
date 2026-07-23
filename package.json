@@ -1,0 +1,24 @@
+{
+  "name": "datacli-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/sdk",
+    "packages/cli"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "test": "npm run build && node --test test/*.test.js",
+    "pack:check": "npm pack --dry-run --workspace @teichai/datacli-core && npm pack --dry-run --workspace @teichai/datacli-sdk && npm pack --dry-run --workspace @teichai/datacli"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.3"
+  }
+}

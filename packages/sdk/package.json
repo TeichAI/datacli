@@ -1,0 +1,32 @@
+{
+  "name": "@teichai/datacli-sdk",
+  "version": "1.0.0",
+  "description": "Pipeline SDK and built-in adapters for DataCLI",
+  "type": "module",
+  "license": "Apache-2.0",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "^0.80.10",
+    "@teichai/datacli-core": "1.0.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@teichai/datacli",
+  "version": "1.0.0",
+  "description": "Generate chat datasets and agent traces from JSONL prompts",
+  "type": "module",
+  "license": "Apache-2.0",
+  "bin": {
+    "datacli": "dist/cli.js"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@teichai/datacli-core": "1.0.0",
+    "@teichai/datacli-sdk": "1.0.0",
+    "commander": "^14.0.0",
+    "jiti": "^2.4.2",
+    "yaml": "^2.8.0",
+    "zod": "^4.0.5"
+  }
+}
